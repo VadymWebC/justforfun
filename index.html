@@ -21,17 +21,20 @@
 			const A = { x: 100, y: 200 }
 			const B = { x: 400, y: 200 }
 
-			const ctx = myCanvas.getContext("2d")
-			ctx.beginPath()
-			ctx.fillStyle = "white"
-			ctx.strokeStyle = "black"
-			ctx.arc(A.x, A.y, 10, 0, Math.PI * 2)
-			ctx.stroke()
-			ctx.fillStyle = "black"
-			ctx.textAlign = "center"
-			ctx.textBaseline = "middle"
-			ctx.font = "bold 14px Arial"
-			ctx.fillText("A", A.x, A.y)
+			function drawDot(pos, label) {
+				const ctx = myCanvas.getContext("2d")
+				ctx.beginPath()
+				ctx.fillStyle = "white"
+				ctx.strokeStyle = "black"
+				ctx.arc(pos.x, pos.y, 10, 0, Math.PI * 2)
+				ctx.stroke()
+				ctx.fillStyle = "black"
+				ctx.textAlign = "center"
+				ctx.textBaseline = "middle"
+				ctx.font = "bold 14px Arial"
+				ctx.fillText(label, pos.x, pos.y)
+			}
+			drawDot(A, "A")
 		</script>
 	</body>
 </html>
