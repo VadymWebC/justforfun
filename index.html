@@ -7,7 +7,7 @@
 		<style>
 			body {
 				margin: 0;
-				background-color: #000;
+				background-color: #aaf;
 				overflow: hidden;
 			}
 		</style>
@@ -20,6 +20,13 @@
 
 			const A = { x: 100, y: 200 }
 			const B = { x: 400, y: 200 }
+
+			const ctx = myCanvas.getContext("2d")
+			ctx.beginPath()
+			ctx.fillStyle = "white"
+			ctx.strokeStyle = "black"
+			ctx.arc(A.x, A.y, 10, 0, Math.PI * 2)
+			ctx.stroke()
 		</script>
 	</body>
 </html>
