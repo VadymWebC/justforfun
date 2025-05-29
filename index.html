@@ -22,7 +22,7 @@
 			const B = { x: 400, y: 100 }
 
 			const orange = { r: 240, g: 150, b: 0 }
-			const blue = { t: 0, g: 70, b: 170 }
+			const blue = { r: 0, g: 70, b: 170 }
 
 			const ctx = myCanvas.getContext("2d")
 
@@ -40,17 +40,19 @@
 				drawDot(A, "A")
 				drawDot(B, "B")
 
-				const { r, g, b } = orange
+				const { r, g, b } = vLerp(orange, blue, t)
+
 				myCanvas.style.backgroundColor = `rgb(${r},${g},${b})`
 
 				requestAnimationFrame(animate)
 			}
 
 			function vLerp(A, B, t) {
-				return {
-					x: lerp(A.x, B.x, t),
-					y: lerp(A.y, B.y, t),
+				const res = {}
+				for (let attr in A) {
+					res[attr] = lerp(A[attr], B[attr], t)
 				}
+				return res
 			}
 
 			function lerp(a, b, t) {
