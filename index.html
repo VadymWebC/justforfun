@@ -21,6 +21,7 @@
 			const A = { x: 100, y: 200 }
 			const B = { x: 400, y: 200 }
 
+			drawDot(A, "A")
 			function drawDot(pos, label) {
 				const ctx = myCanvas.getContext("2d")
 				ctx.beginPath()
@@ -34,7 +35,6 @@
 				ctx.font = "bold 14px Arial"
 				ctx.fillText(label, pos.x, pos.y)
 			}
-			drawDot(A, "A")
 		</script>
 	</body>
 </html>
