@@ -20,10 +20,15 @@
 
 			const A = { x: 100, y: 200 }
 			const B = { x: 400, y: 200 }
-
+			const ctx = myCanvas.getContext("2d")
 			drawDot(A, "A")
+			drawDot(B, "B")
+			const C = {
+				x: (A.x + B.x) / 2,
+				y: 200,
+			}
+			drawDot(C, "C")
 			function drawDot(pos, label) {
-				const ctx = myCanvas.getContext("2d")
 				ctx.beginPath()
 				ctx.fillStyle = "white"
 				ctx.strokeStyle = "black"
