@@ -26,6 +26,23 @@
 
 			const ctx = myCanvas.getContext("2d")
 
+			let audioCtx = null
+			myCanvas.onclick = function () {
+				if (audioCtx === null) {
+					audioCtx = new (AudioContext ||
+						webkitAudioContext ||
+						window.webkitAudioContext)()
+					const osc = audioCtx.createOscillator()
+					osc.frequency.value = 200
+					osc.start()
+
+					const node = audioCtx.createGain()
+					node.gain.value = 0.1
+					osc.connect(node)
+					node.connect(audioCtx.destination)
+				}
+			}
+
 			animate()
 
 			function animate() {
