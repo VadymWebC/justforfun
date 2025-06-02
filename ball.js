@@ -19,19 +19,10 @@ class Ball {
 		}
 	}
 
-	// nice !
 	draw(ctx) {
-		const fakeY = 2 * this.track.center.y - this.center.y
-		if (fakeY > this.center.y) {
-			ctx.beginPath()
-			ctx.arc(this.center.x, this.center.y, this.radius, 0, Math.PI * 2)
-			ctx.strokeStyle = "white"
-			ctx.stroke()
-		} else {
-			ctx.beginPath()
-			ctx.arc(this.center.x, fakeY, this.radius, 0, Math.PI * 2)
-			ctx.strokeStyle = "white"
-			ctx.stroke()
-		}
+		ctx.beginPath()
+		ctx.arc(this.center.x, this.center.y, this.radius, 0, Math.PI * 2)
+		ctx.strokeStyle = "white"
+		ctx.stroke()
 	}
 }
