@@ -7,7 +7,7 @@ class Track {
 	getPosition(offset) {
 		return {
 			x: this.center.x + Math.cos(offset) * this.radius,
-			y: this.center.y + Math.sin(offset) * this.radius,
+			y: this.center.y - Math.sin(offset) * this.radius,
 		}
 	}
 
