@@ -19,6 +19,7 @@ class Ball {
 		}
 	}
 
+	// nice !
 	draw(ctx) {
 		const fakeY = 2 * this.track.center.y - this.center.y
 		if (fakeY > this.center.y) {
