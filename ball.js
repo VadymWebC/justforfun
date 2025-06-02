@@ -4,5 +4,6 @@ class Ball {
 		this.radius = radius
 		this.speed = speed
 		this.offset = 0
+		this.center = this.track.getPosition(this.offset)
 	}
 }
