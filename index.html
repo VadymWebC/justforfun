@@ -26,12 +26,22 @@
 		></script>
 		<script type="text/javascript">
 			const A = { x: 100, y: 200 }
-			drawDot(A, "A")
-
 			const B = { x: 400, y: 300 }
-			drawDot(B, "B")
+			const M = { x: 250, y: 250 }
 
-			drawSegment(A, B)
+			myCanvas.addEventListener("mousemove", evt => {
+				M.x = evt.offsetX
+				M.y = evt.offsetY
+				redrawAll()
+			})
+
+			function redrawAll() {
+				clear()
+				drawDot(A, "A")
+				drawDot(B, "B")
+				drawDot(M, "M")
+				drawSegment(A, B)
+			}
 		</script>
 	</body>
 </html>
