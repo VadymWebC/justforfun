@@ -43,6 +43,9 @@
 				drawDot(B, "B")
 				drawDot(M, "M")
 				drawSegment(A, B)
+				const res = distanceFromPointToSegment(M, A, B)
+				drawText(res.value)
+				drawArrow(res.point, M)
 			}
 
 			function distanceFromPointToSegment(M, A, B) {
