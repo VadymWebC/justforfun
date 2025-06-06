@@ -35,6 +35,19 @@
 				redrawAll()
 			})
 
+			myCanvas.addEventListener("click", evt => {
+				A.x = evt.offsetX
+				A.y = evt.offsetY
+				redrawAll()
+			})
+
+			myCanvas.addEventListener("contextmenu", evt => {
+				B.x = evt.offsetX
+				B.y = evt.offsetY
+				redrawAll()
+				evt.preventDefault()
+			})
+
 			redrawAll()
 
 			function redrawAll() {
