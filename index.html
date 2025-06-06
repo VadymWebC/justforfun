@@ -35,12 +35,17 @@
 				redrawAll()
 			})
 
+			redrawAll()
+
 			function redrawAll() {
 				clear()
 				drawDot(A, "A")
 				drawDot(B, "B")
 				drawDot(M, "M")
 				drawSegment(A, B)
+				drawArrow(A)
+				drawArrow(B)
+				drawArrow(M)
 			}
 		</script>
 	</body>
