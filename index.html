@@ -50,6 +50,12 @@
 			function projectPointToSegment(M, A, B) {
 				const AB = subtract(B, A)
 				drawArrow(add(AB, A), A)
+
+				const AM = subtract(M, A)
+				drawArrow(add(AM, A), A)
+
+				const t = dot(AM, AB)
+				drawText(t)
 			}
 		</script>
 	</body>
