@@ -44,7 +44,8 @@
 				drawDot(M, "M")
 				drawSegment(A, B)
 
-				projectPointToSegment(M, A, B)
+				const { P, t } = projectPointToSegment(M, A, B)
+				drawDot(P, "P")
 			}
 
 			function projectPointToSegment(M, A, B) {
