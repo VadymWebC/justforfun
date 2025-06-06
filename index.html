@@ -43,9 +43,14 @@
 				drawDot(B, "B")
 				drawDot(M, "M")
 				drawSegment(A, B)
-				drawArrow(A)
-				drawArrow(B)
-				drawArrow(M)
+
+				projectPointToSegment(M, A, B)
+			}
+
+			function projectPointToSegment(M, A, B) {
+				const AB = subtract(B, A)
+				const tail = { x: 100, y: 100 }
+				drawArrow(AB, tail)
 			}
 		</script>
 	</body>
