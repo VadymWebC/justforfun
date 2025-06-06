@@ -43,21 +43,19 @@
 				drawDot(B, "B")
 				drawDot(M, "M")
 				drawSegment(A, B)
+			}
 
+			function distanceFromPointToSegment(M, A, B) {
 				const { P, t } = projectPointToSegment(M, A, B)
-				drawDot(P, "P")
 				if (t > 0 && t < 1) {
-					drawText(distance(M, P))
-					drawArrow(P, M)
+					return { point: P, value: distance(M, P) }
 				} else {
 					const distToA = distance(M, A)
 					const distToB = distance(M, B)
 					if (distToA < distToB) {
-						drawText(distToA)
-						drawArrow(A, M)
+						return { point: A, value: distToA }
 					} else {
-						drawText(distToB)
-						drawArrow(B, M)
+						return { point: B, value: distToB }
 					}
 				}
 			}
