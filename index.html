@@ -49,19 +49,12 @@
 
 			function projectPointToSegment(M, A, B) {
 				const AB = subtract(B, A)
-				drawArrow(add(AB, A), A)
-
 				const AM = subtract(M, A)
-				drawArrow(add(AM, A), A)
-
 				const nAB = normalize(AB)
-
 				const t = dot(AM, nAB) / distance(A, B)
 				const scaler = dot(AM, nAB)
-				drawText(t)
-
 				const P = add(A, scale(nAB, scaler))
-				drawDot(P, "P")
+				return { P, t }
 			}
 		</script>
 	</body>
