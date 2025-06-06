@@ -56,8 +56,11 @@
 
 				const nAB = normalize(AB)
 
-				const t = dot(AM, nAB)
+				const t = dot(AM, nAB) / distance(A, B)
 				drawText(t)
+
+				const P = lerp2D(A, B, t)
+				drawDot(P, "P")
 			}
 		</script>
 	</body>
